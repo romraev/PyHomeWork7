@@ -5,22 +5,22 @@
 # Винни-Пух вбивает в программу с клавиатуры. В ответе напишите “Парам пам-пам”, если с ритмом все в порядке и “Пам парам”, 
 # если с ритмом все не в порядке
 
-# song = list(input('Enter song: ').split())
+song = list(input('Enter song: ').split())
 
-# def countVocals(song, i):
-#     count = len(list(filter(lambda x: x == 'а' or x == 'у' or x == 'е' or x == 'ы' or x == 'о' or x == 'э' or x == 'я' or x == 'и' or x == 'ю', list(song[i]))))
-#     return count
+def count_vocals(song, i):
+    count = len(list(filter(lambda x: x == 'а' or x == 'у' or x == 'е' or x == 'ы' or x == 'о' or x == 'э' or x == 'я' or x == 'и' or x == 'ю', list(song[i]))))
+    return count
 
-# def isRhythm(op, song):
-#     flag = True
-#     for i in range(len(song)):
-#         if op(song, i) != op(song, 0):
-#             flag = False
-#     return flag
+def is_rhythm(op, song):
+    flag = True
+    for i in range(len(song)):
+        if op(song, i) != op(song, 0):
+            flag = False
+    return flag
 
-# if isRhythm(countVocals, song) == True:
-#     print('Парам пам-пам')
-# else: print('Пам парам')
+if is_rhythm(count_vocals, song) == True:
+    print('Парам пам-пам')
+else: print('Пам парам')
 
 
 # Задача 36: Напишите функцию print_operation_table(operation, num_rows=6, num_columns=6), которая принимает в качестве 
